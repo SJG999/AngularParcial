@@ -13,6 +13,24 @@
 <div>
   {{email}}
 </div>
+<div class="Elements">
+  <table class="table">
+    <tr>
+      <td>Atomic Number</td>
+      <td>Element Symbol</td>
+      <td>Element Name</td>
+      <td>Atomic Weight</td>
+    </tr>
+    <ng-container *ngFor="let Element of Elements">
+      <tr>
+        <td>{{Element.Number}}</td>
+        <td>{{Element.Symbol}}</td>
+        <td>{{Element.Name}}</td>
+        <td>{{Element.Weight}}</td>
+      </tr>
+    </ng-container>
+  </table>
+</div>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
