@@ -20,13 +20,16 @@
       <td>Element Symbol</td>
       <td>Element Name</td>
       <td>Atomic Weight</td>
+      <td>Is Metal?</td>
     </tr>
-    <ng-container *ngFor="let Element of Elements">
+    <ng-container *ngFor="let Element of Elements" [ngSwitch]="Element.IsMetal">
       <tr>
         <td>{{Element.Number}}</td>
         <td>{{Element.Symbol}}</td>
-        <td>{{Element.Name}}</td>
+        <td [ngClass]="{Green: Element.Category == 'A' ,Blue: Element.Category == 'NG'}">{{Element.Name}}</td>
         <td>{{Element.Weight}}</td>
+        <td *ngSwitchCase=1>Yes</td>
+        <td *ngSwitchCase=2>No</td>        
       </tr>
     </ng-container>
   </table>
